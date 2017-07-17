@@ -38,20 +38,54 @@
                                     <action selector="fadeIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="btg-VO-a7U"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ism-Mu-5hc">
+                                <rect key="frame" x="266" y="316" width="62" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.46864149309999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkW-Kf-bgQ">
+                                <rect key="frame" x="55" y="316" width="52" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.46864149309999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="vKn-3r-GR6">
+                                <rect key="frame" x="67" y="156" width="240" height="62"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrived" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9h-LC-bYo">
+                                <rect key="frame" x="144" y="171" width="86" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="1" green="0.35294117650000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uzL-IM-29i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BUg-Ri-PE0"/>
+                            <constraint firstItem="vKn-3r-GR6" firstAttribute="centerX" secondItem="5KZ-gM-c7o" secondAttribute="centerX" id="EJa-GB-O9M"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5KZ-gM-c7o" secondAttribute="bottom" constant="42" id="Hzf-Y8-smC"/>
                             <constraint firstItem="5KZ-gM-c7o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="148" id="LnD-7O-aJe"/>
+                            <constraint firstItem="uzL-IM-29i" firstAttribute="leading" secondItem="vkW-Kf-bgQ" secondAttribute="trailing" constant="-107" id="NOP-Ge-Daq"/>
+                            <constraint firstItem="ism-Mu-5hc" firstAttribute="leading" secondItem="uzL-IM-29i" secondAttribute="trailing" constant="-109" id="aYg-Y3-FO8"/>
+                            <constraint firstItem="L9h-LC-bYo" firstAttribute="centerY" secondItem="vKn-3r-GR6" secondAttribute="centerY" id="blC-rt-p3F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5KZ-gM-c7o" secondAttribute="trailing" constant="148" id="dNa-Go-1w7"/>
+                            <constraint firstItem="vKn-3r-GR6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="eF4-ky-FRX"/>
                             <constraint firstAttribute="trailing" secondItem="uzL-IM-29i" secondAttribute="trailing" id="f56-sF-F8T"/>
+                            <constraint firstItem="vkW-Kf-bgQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gCC-vo-bZD"/>
+                            <constraint firstItem="vkW-Kf-bgQ" firstAttribute="top" secondItem="vKn-3r-GR6" secondAttribute="bottom" constant="98" id="nGN-C8-HOo"/>
+                            <constraint firstItem="vKn-3r-GR6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="136" id="nix-Zj-tOL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uzL-IM-29i" secondAttribute="bottom" id="tdX-8L-idT"/>
+                            <constraint firstItem="L9h-LC-bYo" firstAttribute="centerX" secondItem="vKn-3r-GR6" secondAttribute="centerX" id="uXW-ee-dPC"/>
+                            <constraint firstItem="ism-Mu-5hc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vT5-ws-cUR"/>
                             <constraint firstItem="uzL-IM-29i" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zsX-u6-9sh"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="arrivalLabel" destination="ism-Mu-5hc" id="dU5-N3-ExD"/>
                         <outlet property="backgroundImageView" destination="uzL-IM-29i" id="4DV-2g-g4N"/>
+                        <outlet property="departureLabel" destination="vkW-Kf-bgQ" id="cPa-KV-whQ"/>
+                        <outlet property="statusLabel" destination="L9h-LC-bYo" id="Wpx-Gl-dX0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,6 +94,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="banner" width="191" height="47"/>
         <image name="bg-sunny" width="320" height="568"/>
     </resources>
 </document>
