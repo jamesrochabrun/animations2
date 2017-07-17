@@ -26,12 +26,10 @@ class ViewController: UIViewController {
         return snowClipView
     }()
     @IBOutlet weak var backgroundImageView: UIImageView!
-    
     @IBOutlet weak var departureLabel: UILabel!
-    
     @IBOutlet weak var arrivalLabel: UILabel!
-    
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var planeImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +71,7 @@ extension ViewController {
             y: showEffects ? 50.0 : -50.0)
         moveLabel(arrivalLabel, offSet: offSetArriving)
         cubeTransition(label: statusLabel)
+        planeDepart()
     }
     
     //MARK: helper methods
@@ -183,6 +182,60 @@ extension ViewController {
                 auxLabel.removeFromSuperview()
         }
         )
+    }
+}
+
+//MARK: Keyframe API
+extension ViewController {
+    
+    func planeDepart() {
+        //Store plane center value
+        let originalCenter = planeImageView.center
+        
+        //Creat keyframe animation
+        UIView.animateKeyframes(withDuration: 1.5,
+                                delay: 0.0,
+                                animations: {
+                                    //Create keyframes
+                                    
+                                    //Move plane to the right & up
+                                    UIView.addKeyframe(withRelativeStartTime: 0.0,
+                                                       relativeDuration: 0.25,
+                                                       animations: {
+                                                        self.planeImageView.center.x += 80.0
+                                                        self.planeImageView.center.y -= 10.0
+                                    })
+                                    //rotate the plane
+                                    UIView.addKeyframe(withRelativeStartTime: 0.1,
+                                                       relativeDuration: 0.4,
+                                                       animations: {
+                                                        self.planeImageView.transform = CGAffineTransform(rotationAngle: -.pi / 8)
+                                    })
+                                    //Move plane to the right & up off screen, while fading out
+                                    UIView.addKeyframe(withRelativeStartTime: 0.25,
+                                                       relativeDuration: 0.25,
+                                                       animations: {
+                                                        self.planeImageView.center.x += 100
+                                                        self.planeImageView.center.y -= 50.0
+                                                        self.planeImageView.alpha = 0.0
+                                    })
+                                    //Move plane just off left side of screen, reste its transform & height
+                                    UIView.addKeyframe(withRelativeStartTime: 0.52,
+                                                       relativeDuration: 0.01, animations: {
+                                                        self.planeImageView.transform = .identity
+                                                        self.planeImageView.center = CGPoint(x: 0, y: originalCenter.y)
+                                    })
+                                    //Move plane back to ist original position & fade in
+                                    UIView.addKeyframe(withRelativeStartTime: 0.55,
+                                                       relativeDuration: 0.45, animations: {
+                                                        self.planeImageView.alpha = 1.0
+                                                        self.planeImageView.center = originalCenter
+                                    })
+        }, completion: nil)
+    }
+    
+    func summarySwitch(to summaryText: String) {
+        
     }
 }
 

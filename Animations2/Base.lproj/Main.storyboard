@@ -59,6 +59,13 @@
                                 <color key="textColor" red="1" green="0.35294117650000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plane" translatesAutoresizingMaskIntoConstraints="NO" id="buA-1J-OOi">
+                                <rect key="frame" x="137" y="428" width="100" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9hg-0U-kVv"/>
+                                    <constraint firstAttribute="height" constant="70" id="Pjz-w6-eBF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -67,7 +74,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5KZ-gM-c7o" secondAttribute="bottom" constant="42" id="Hzf-Y8-smC"/>
                             <constraint firstItem="5KZ-gM-c7o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="148" id="LnD-7O-aJe"/>
                             <constraint firstItem="uzL-IM-29i" firstAttribute="leading" secondItem="vkW-Kf-bgQ" secondAttribute="trailing" constant="-107" id="NOP-Ge-Daq"/>
+                            <constraint firstItem="5KZ-gM-c7o" firstAttribute="top" secondItem="buA-1J-OOi" secondAttribute="bottom" constant="97" id="UgN-AQ-IyV"/>
                             <constraint firstItem="ism-Mu-5hc" firstAttribute="leading" secondItem="uzL-IM-29i" secondAttribute="trailing" constant="-109" id="aYg-Y3-FO8"/>
+                            <constraint firstItem="buA-1J-OOi" firstAttribute="centerX" secondItem="5KZ-gM-c7o" secondAttribute="centerX" id="b62-IF-Zov"/>
                             <constraint firstItem="L9h-LC-bYo" firstAttribute="centerY" secondItem="vKn-3r-GR6" secondAttribute="centerY" id="blC-rt-p3F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5KZ-gM-c7o" secondAttribute="trailing" constant="148" id="dNa-Go-1w7"/>
                             <constraint firstItem="vKn-3r-GR6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="eF4-ky-FRX"/>
@@ -85,6 +94,7 @@
                         <outlet property="arrivalLabel" destination="ism-Mu-5hc" id="dU5-N3-ExD"/>
                         <outlet property="backgroundImageView" destination="uzL-IM-29i" id="4DV-2g-g4N"/>
                         <outlet property="departureLabel" destination="vkW-Kf-bgQ" id="cPa-KV-whQ"/>
+                        <outlet property="planeImageView" destination="buA-1J-OOi" id="3aS-cX-fta"/>
                         <outlet property="statusLabel" destination="L9h-LC-bYo" id="Wpx-Gl-dX0"/>
                     </connections>
                 </viewController>
@@ -96,5 +106,6 @@
     <resources>
         <image name="banner" width="191" height="47"/>
         <image name="bg-sunny" width="320" height="568"/>
+        <image name="plane" width="85" height="36"/>
     </resources>
 </document>
